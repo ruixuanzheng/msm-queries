@@ -19,7 +19,7 @@ class MiscController < ApplicationController
     render({ :template => "misc_templates/youngest"})
   end
 
-  def oldest
+  def eldest
     render({ :template => "misc_templates/eldest"})
   end
 
