@@ -11,4 +11,5 @@ class DirectorsController < ApplicationController
     @the_director = matching_records.at(0)
     render({ :template => "director_templates/details"})
   end
+
 end
