@@ -3,13 +3,6 @@ class MiscController < ApplicationController
     render({ :template => "misc_templates/home"})
   end
 
-  def alldirectors
-    render({ :template => "misc_templates/directors"})
-  end
-
-  def allmovies
-    render({ :template => "misc_templates/movies"})
-  end
 
   def allactors
     render({ :template => "misc_templates/actors"})
@@ -27,6 +20,14 @@ class MiscController < ApplicationController
     the_id = params.fetch("the_id")
     matching_records = Director.where({:id => the_id})
     @the_director = matching_records.at(0)
+    render({ :template => "misc_templates/details"})
+  end
+
+
+  def show_movies
+    the_id = params.fetch("the_id")
+    matching_records = Movie.where({:id => the_id})
+    @the_movie = matching_records.at(0)
     render({ :template => "misc_templates/details"})
   end
 
